@@ -1,1 +1,1 @@
-Biryani: Rice and Meat
+Biryani: Spicy Meat

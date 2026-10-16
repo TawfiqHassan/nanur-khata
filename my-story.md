@@ -52,3 +52,17 @@ Mitu wanted to write in the book from Chattogram. So, I took the book to the clo
 * **`git pull`**: It is exactly `git fetch` followed immediately by `git merge`. It downloads the new changes and instantly applies/merges them into your current working files in one step.
 
 
+## Chapter 5: Half-Cooked Halua and Time Travel
+Halfway through making halua, Nanu reminded me about the cardamom for the biryani! 
+
+**Commands Used & Story:**
+* I used `git stash` to safely hide my half-finished `halua.md`.
+* I quickly edited `biryani.md`, staged, and committed the missing cardamom fix.
+* I brought back my halua progress using `git stash pop` and committed it.
+* To keep things tidy, I created `sweets/` and `savory/` folders, moved the files using `git mv`, and deleted an old recipe using `git rm`. I verified the renames using `git log --stat -M`.
+* I inspected a commit using `git show HEAD`.
+* To test time travel, I created a branch `test-reset`, made a dummy commit, and ran `git reset --hard HEAD~1`. I lost the `test.md` file and the commit entirely!
+
+**Theory Answer: Why are rebase and reset --hard dangerous on a shared branch?**
+`reset --hard` and `rebase` rewrite Git history. If you do this on a shared branch (like `main`) after pushing, your teammates' local histories will conflict with the cloud. When they try to pull or push, it causes massive sync errors, duplicate commits, and broken timelines. It should only be done on local, private branches.
+

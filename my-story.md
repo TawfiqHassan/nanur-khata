@@ -38,3 +38,17 @@ To trigger a conflict on purpose, I created a new branch `spicy-biryani` and mod
 **Resolution:** I opened `biryani.md`, removed the Git conflict markers, kept the final recipe text I wanted, and ran `git add biryani.md` followed by `git commit` to successfully resolve the conflict.
 
 
+## Chapter 4: Mitu Joins In
+Mitu wanted to write in the book from Chattogram. So, I took the book to the cloud!
+
+**Commands Used & Story:**
+* I created a GitHub repository and connected it using `git remote add origin https://github.com/TawfiqHassan/nanur-khata`, then uploaded my work using `git push -u origin main`.
+* To act as Mitu, I went outside my project folder and ran `git clone https://github.com/TawfiqHassan/nanur-khata mitur-khata`. Mitu added `chittagong-mezban.md`, committed, and pushed it to GitHub.
+* Back in my own `nanur-khata` folder, I ran `git fetch origin` to download Mitu's changes without mixing them with my files. Then I ran `git merge origin/main` to combine them.
+* Mitu added another recipe (`kala-bhuna.md`) and pushed. This time, I used `git pull origin main` to bring it into my book.
+
+**Theory Answer: Difference between fetch + merge and pull**
+* **`git fetch`**: Only downloads the latest changes and commits from the remote repository to your local Git (hidden tracking branches), but it DOES NOT change your actual working files. You have to run `git merge` manually afterward.
+* **`git pull`**: It is exactly `git fetch` followed immediately by `git merge`. It downloads the new changes and instantly applies/merges them into your current working files in one step.
+
+

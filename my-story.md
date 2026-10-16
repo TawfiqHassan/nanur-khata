@@ -66,3 +66,7 @@ Halfway through making halua, Nanu reminded me about the cardamom for the biryan
 **Theory Answer: Why are rebase and reset --hard dangerous on a shared branch?**
 `reset --hard` and `rebase` rewrite Git history. If you do this on a shared branch (like `main`) after pushing, your teammates' local histories will conflict with the cloud. When they try to pull or push, it causes massive sync errors, duplicate commits, and broken timelines. It should only be done on local, private branches.
 
+
+
+### Final Git Log Graph
+![Git Graph](graph.png)
